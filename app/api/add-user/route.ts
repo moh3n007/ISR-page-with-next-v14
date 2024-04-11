@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
         method: "POST",
       }
     ).then((data) => data.json());
-    if (!!res.id) {
+    if (!!res) {
       revalidateTag("users_list");
     }
     return Response.json({ res });

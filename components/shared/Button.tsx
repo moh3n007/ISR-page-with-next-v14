@@ -7,7 +7,13 @@ const Button: FC<
   >
 > = (props) => {
   return (
-    <button {...props} className="rounded-md bg-slate-950 text-white px-2 py-1">
+    <button
+      {...props}
+      className={
+        "rounded-md bg-slate-950 text-white px-2 py-1" +
+        (!!props.disabled ? " opacity-25" : "")
+      }
+    >
       {props.children}
     </button>
   );
